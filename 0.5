@@ -1,0 +1,17 @@
+sequenceDiagram
+
+participant browser
+participant server
+
+browser ->> server: reqIndex()
+activate server
+server ->> browser: HTTP 200 index.js
+deactivate server
+
+browser ->> server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+activate server
+server ->> browser: HTTP 200 -> HTML doc
+deactivate server
+
+
+
